@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
 import "./login.css";
 import { ImGithub } from "react-icons/im";
+import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
 
 const Login = () => {
+
+  const {helo} = useContext(AuthContext)
+
+  const handleLogin = e => {
+    e.preventDefault();
+    const form = e.target; 
+    const email = form.email.value;
+    const password = form.password.value; 
+  }
+
   return (
     <>
       <section className="bg-gray-100 md:m-5 min-h-screen flex box-border justify-center items-center">
@@ -13,7 +25,7 @@ const Login = () => {
               If you already a member, easily log in now.
             </p>
 
-            <form action="" className="flex flex-col gap-4">
+            <form onSubmit={handleLogin} action="" className="flex flex-col gap-4">
               <input
                 className="p-2 mt-8 rounded-xl border"
                 type="email"
