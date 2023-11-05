@@ -5,7 +5,7 @@ import { ImGithub } from "react-icons/im";
 const Login = () => {
   return (
     <>
-      <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
+      <section className="bg-gray-100 md:m-5 min-h-screen flex box-border justify-center items-center">
         <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
           <div className="md:w-1/2 px-8">
             <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
