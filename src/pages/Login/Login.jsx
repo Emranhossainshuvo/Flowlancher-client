@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
 
-  const { createUser } = useContext(AuthContext); 
+  const { logIn } = useContext(AuthContext);
 
   const handleLogin = e => {
     e.preventDefault();
@@ -14,14 +14,14 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    createUser(email, password)
-    .then(res => {
-      const user = res.user; 
-      console.log(user)
-    })
-    .catch(error => {
-      console.error(error)
-    })
+    logIn(email, password)
+      .then(res => {
+        const user = res.user;
+        console.log(user)
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
 
   return (
@@ -34,7 +34,7 @@ const Login = () => {
               If you already a member, easily log in now.
             </p>
 
-            <form onSubmit={handleLogin} action="" className="flex flex-col gap-4">
+            <form onSubmit={handleLogin} className="flex flex-col gap-4">
               <input
                 className="p-2 mt-8 rounded-xl border"
                 type="email"

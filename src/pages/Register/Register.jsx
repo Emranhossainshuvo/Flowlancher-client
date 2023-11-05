@@ -1,7 +1,29 @@
+import { useContext } from "react";
 import { ImGithub } from "react-icons/im";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
+
+  const { createUser } = useContext(AuthContext);
+
+  const handleCreateUser = e => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    createUser(email, password)
+      .then(res => {
+        const user = res.user;
+        console.log(user)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
+
   return (
     <>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
@@ -12,11 +34,11 @@ const Register = () => {
               Haven't register yet, register now!!
             </p>
 
-            <form action="" className="flex flex-col gap-4">
+            <form onSubmit={handleCreateUser} action="" className="flex flex-col gap-4">
               <input
                 className="p-2 mt-8 rounded-xl border"
-                type="email"
-                name="email"
+                type="text"
+                name="name"
                 placeholder="Name"
               />
               <input
@@ -33,8 +55,8 @@ const Register = () => {
                   id="password"
                   placeholder="Password"
                 />
-               
-                
+
+
               </div>
               <button
                 className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
