@@ -5,8 +5,19 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
 
-  const { createUser, googleLogin } = useContext(AuthContext);
+  const { createUser, googleLogin, githubLogin } = useContext(AuthContext);
 
+
+  const createUserWithGithub = () => {
+    githubLogin()
+    .then(res => {
+      const user = res.user; 
+      console.log(user)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   const createUserWithGoogle = () => {
     googleLogin()
@@ -108,7 +119,7 @@ const Register = () => {
               </svg>
               Continue with Google
             </button>
-            <button className="bg-white border py-2 w-full rounded-xl mt-2 gap-3 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button onClick={createUserWithGithub} className="bg-white border py-2 w-full rounded-xl mt-2 gap-3 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <ImGithub />
               Continue with Github
             </button>
