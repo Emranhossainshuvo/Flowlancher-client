@@ -1,17 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import './navbar.css'
 
 const Navbar = () => {
     // nav items for small devices and larg devices
   const navItems = <>
-    <NavLink to='/'><li>Home</li></NavLink>
-    <NavLink><li>Blogs</li></NavLink>
-    <NavLink><li>Adress</li></NavLink>
-    <NavLink><li>Donate us</li></NavLink>
+    <NavLink to='/'><li className="mr-10">Home</li></NavLink>
+    <NavLink><li className="mr-10">Blogs</li></NavLink>
+    <NavLink><li className="mr-10">Adress</li></NavLink>
+    <NavLink><li className="mr-10">Donate us</li></NavLink>
 
   </>;
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-transparent background-img max-w-7xl mx-auto bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +40,11 @@ const Navbar = () => {
         }
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        {/* div for name and icon */}
+        <div className="flex items-center">
+            <img src="https://i.ibb.co/WDYxJ4y/icons8-handshake-64.png" alt="" />
+            <h2 className="text-4xl font-bold ms-5">FlowLancher</h2>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -49,7 +54,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Link to='/login'><button>Login</button></Link>
       </div>
     </div>
   );
