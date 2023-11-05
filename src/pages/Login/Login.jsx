@@ -6,7 +6,19 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
 
-  const { logIn } = useContext(AuthContext);
+  const { logIn, googleLogin } = useContext(AuthContext);
+
+  const loginUserWithGoogle = () => {
+    googleLogin()
+    .then(res => {
+      const user = res.user; 
+      console.log(user)
+      // console.log(res)
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }
 
   const handleLogin = e => {
     e.preventDefault();
@@ -86,7 +98,7 @@ const Login = () => {
               <p className="text-center text-sm">OR</p>
               <hr className="border-gray-400" />
             </div>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button onClick={loginUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"

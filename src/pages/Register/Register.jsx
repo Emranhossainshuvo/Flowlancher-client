@@ -5,7 +5,19 @@ import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleLogin } = useContext(AuthContext);
+
+
+  const createUserWithGoogle = () => {
+    googleLogin()
+    .then(res => {
+      const user = res.user; 
+      console.log(user)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
 
   const handleCreateUser = e => {
     e.preventDefault();
@@ -70,7 +82,7 @@ const Register = () => {
               <p className="text-center text-sm">OR</p>
               <hr className="border-gray-400" />
             </div>
-            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+            <button onClick={createUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
               <svg
                 className="mr-3"
                 xmlns="http://www.w3.org/2000/svg"
