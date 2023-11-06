@@ -1,33 +1,36 @@
 import { useContext } from "react";
 import { ImGithub } from "react-icons/im";
+import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
   const { createUser, googleLogin, githubLogin } = useContext(AuthContext);
 
+  const notify = () => toast('Here is your toast.');
 
   const createUserWithGithub = () => {
     githubLogin()
-    .then(res => {
-      const user = res.user; 
-      console.log(user)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .then(res => {
+        const user = res.user;
+        console.log(user)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   const createUserWithGoogle = () => {
     googleLogin()
-    .then(res => {
-      const user = res.user; 
-      console.log(user)
-    })
-    .catch(err => {
-      console.log(err)
-    })
+      .then(res => {
+        const user = res.user;
+        console.log(user)
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   const handleCreateUser = e => {
@@ -35,6 +38,16 @@ const Register = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    const confirm = form.confirm.value;
+
+    // condition for checking password and confirm password are the same
+    if (password !== confirm) {
+      return Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Password did not match!',
+      });
+    }
 
     createUser(email, password)
       .then(res => {
@@ -58,19 +71,21 @@ const Register = () => {
             </p>
 
             <form onSubmit={handleCreateUser} action="" className="flex flex-col gap-4">
-              <input
-                className="p-2 mt-8 rounded-xl border"
-                type="text"
-                name="name"
-                placeholder="Name"
-              />
-              <input
-                className="p-2 rounded-xl border"
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
-              <div className="relative">
+              <div className="flex gap-6">
+                <input
+                  className="p-2 mt-8 rounded-xl border w-full"
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                />
+                <input
+                  className="p-2 mt-8 rounded-xl border"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div className="flex gap-6">
                 <input
                   className="p-2 rounded-xl border w-full"
                   type="password"
@@ -78,6 +93,24 @@ const Register = () => {
                   id="password"
                   placeholder="Password"
                 />
+                <input
+                  className="p-2 rounded-xl border w-full"
+                  type="password"
+                  name="confirm"
+                  id="confirm"
+                  placeholder="Confirm Password"
+                />
+              </div>
+
+              <div className="relative">
+                <input
+                  className="ps-2 py-2  rounded-xl border w-full"
+                  type="text"
+                  name="photo"
+                  id="photo"
+                  placeholder="Photo URL"
+                />
+
 
 
               </div>
