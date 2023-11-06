@@ -76,18 +76,22 @@ const Register = () => {
     //     });
     // }
 
-      if (password !== confirm) {
-        return Swal.fire({
-          icon: 'warning',
-          title: 'Oops...',
-          text: 'Password did not match!',
-        });
-      }
+    if (password !== confirm) {
+      return Swal.fire({
+        icon: 'warning',
+        title: 'Oops...',
+        text: 'Password did not match!',
+      });
+    }
 
     createUser(email, password)
       .then(res => {
         const user = res.user;
         console.log(user)
+        Swal.fire({
+          icon: 'success',
+          text: 'Successfully registered!',
+        });
       })
       .catch(error => {
         console.error(error)
@@ -97,7 +101,7 @@ const Register = () => {
 
   return (
     <>
-    <Navbar></Navbar>
+      <Navbar></Navbar>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
         <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
           <div className="md:w-1/2 px-8">
@@ -118,6 +122,7 @@ const Register = () => {
                   className="p-2 mt-8 rounded-xl border"
                   type="email"
                   name="email"
+                  required
                   placeholder="Email"
                 />
               </div>
@@ -125,6 +130,7 @@ const Register = () => {
                 <input
                   className="p-2 rounded-xl border w-full"
                   type="password"
+                  required
                   name="password"
                   id="password"
                   placeholder="Password"
@@ -133,6 +139,7 @@ const Register = () => {
                   className="p-2 rounded-xl border w-full"
                   type="password"
                   name="confirm"
+                  required
                   id="confirm"
                   placeholder="Confirm Password"
                 />
@@ -144,6 +151,7 @@ const Register = () => {
                   type="text"
                   name="photo"
                   id="photo"
+                  required
                   placeholder="Photo URL"
                 />
 
