@@ -18,6 +18,7 @@ const Login = () => {
     .then(res => {
       const user = res.user; 
       console.log(user)
+      navigate(location?.state ? location?.state : '/')
       // console.log(res)
     })
     .catch(error => {
@@ -30,6 +31,7 @@ const Login = () => {
     .then(res => {
       const user = res.user; 
       console.log(user)
+      navigate(location?.state ? location?.state : '/')
     })
     .catch(err => {
       console.log(err)
