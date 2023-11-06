@@ -1,6 +1,7 @@
 
 import Navbar from '../shared/Navbar/Navbar';
 import Footer from '../shared/Footer/Footer';
+import { Helmet } from 'react-helmet';
 
 const AddJob = () => {
 
@@ -22,7 +23,7 @@ const AddJob = () => {
         <div>
             <Navbar></Navbar>
             
-
+            <Helmet><title>FlowLancher | Add job</title></Helmet>
 
             <div className='mt-10 mb-10 max-w-7xl mx-auto'>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import './eror.css'
+import { Helmet } from "react-helmet";
 
 const ErrorPage = () => {
   return (
@@ -7,6 +8,7 @@ const ErrorPage = () => {
 
     <div className="grid h-screen px-4 bg-white place-content-center">
       <div className="text-center">
+      <Helmet><title>FlowLancher | Error</title></Helmet>
         <img
           className="md:max-w-[60vw]"
           src="https://i.ibb.co/zZRCCxp/20824298-6342464.jpg"

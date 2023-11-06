@@ -6,6 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
 
@@ -61,6 +62,7 @@ const Login = () => {
 
   return (
     <>
+    <Helmet><title>FlowLancher | Login</title></Helmet>
     <Navbar></Navbar>
       <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
         <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">

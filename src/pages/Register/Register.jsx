@@ -5,6 +5,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import Navbar from "../shared/Navbar/Navbar";
 import Footer from "../shared/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
 
@@ -109,7 +110,7 @@ const Register = () => {
             <p className="text-sm mt-4 text-[#002D74]">
               Haven't register yet, register now!!
             </p>
-
+            <Helmet><title>FlowLancher | Register</title></Helmet>
             <form onSubmit={handleCreateUser} action="" className="flex flex-col gap-4">
               <div className="flex gap-6">
                 <input
