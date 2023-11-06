@@ -40,39 +40,39 @@ const Register = () => {
 
     // condition for checking password and confirm password are the same
 
-    if(password.length < 6){
-      return Swal.fire({
-        icon: 'error',
-        title: '',
-        text: 'Password must contain at least 6 characters!',
-      });
-    }
+    // if(password.length < 6){
+    //   return Swal.fire({
+    //     icon: 'error',
+    //     title: '',
+    //     text: 'Password must contain at least 6 characters!',
+    //   });
+    // }
 
     // if (!password.includes(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)){
     //   return alert('hiiiiiiiiii')
     // }
 
-    if (password.search(/[a-z]/) < 0) {
-        return Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Password must contain one smaller letter!',
-        });
-    }
-    if (password.search(/[A-Z]/) < 0) {
-        return Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Password must contain one capital letter!',
-        });
-    }
-    if (password.search(/[1-9]/) < 0) {
-        return Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Password must contain one digit!',
-        });
-    }
+    // if (password.search(/[a-z]/) < 0) {
+    //     return Swal.fire({
+    //       icon: 'error',
+    //       title: 'Oops...',
+    //       text: 'Password must contain one smaller letter!',
+    //     });
+    // }
+    // if (password.search(/[A-Z]/) < 0) {
+    //     return Swal.fire({
+    //       icon: 'error',
+    //       title: 'Oops...',
+    //       text: 'Password must contain one capital letter!',
+    //     });
+    // }
+    // if (password.search(/[1-9]/) < 0) {
+    //     return Swal.fire({
+    //       icon: 'error',
+    //       title: 'Oops...',
+    //       text: 'Password must contain one digit!',
+    //     });
+    // }
 
       if (password !== confirm) {
         return Swal.fire({
