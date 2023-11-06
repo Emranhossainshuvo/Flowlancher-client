@@ -11,17 +11,17 @@ const Navbar = () => {
   // nav items for small devices and larg devices
   const navItems = <>
     <NavLink to='/'><li className="mr-10">Home</li></NavLink>
-    <NavLink><li className="mr-10">Blogs</li></NavLink>
-    <NavLink><li className="mr-10">Adress</li></NavLink>
-    <NavLink><li className="mr-10">Donate us</li></NavLink>
-
+    <NavLink to='/addjob'><li className="mr-10">Add job</li></NavLink>
+    <NavLink to='/mypostedjobs'><li className="mr-10">My posted jobs</li></NavLink>
+    <NavLink to='/mybids'><li className="mr-10">My Bids</li></NavLink>
+    <NavLink to='/bidrequest'><li className="mr-10">Bid Requests</li></NavLink>
   </>;
 
   const signOutUser = () => {
     handleSignOut()
       .then(() => {
         // console.log('User signed out')
-         Swal.fire({
+        Swal.fire({
           icon: 'info',
           text: 'Successfully logged out!',
         });
