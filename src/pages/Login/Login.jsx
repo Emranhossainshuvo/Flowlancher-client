@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./login.css";
 import { ImGithub } from "react-icons/im";
 import { useContext } from "react";
@@ -10,6 +10,8 @@ import Footer from "../shared/Footer/Footer";
 const Login = () => {
 
   const { logIn, googleLogin, githubLogin, user } = useContext(AuthContext);
+  const location = useLocation(); 
+  const navigate = useNavigate(); 
 
   const loginUserWithGoogle = () => {
     googleLogin()
@@ -48,6 +50,7 @@ const Login = () => {
           icon: 'success',
           text: 'Successfully logged in!',
         });
+        navigate(location?.state ? location?.state : '/')
       })
       .catch(error => {
         console.error(error)
