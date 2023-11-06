@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { ImGithub } from "react-icons/im";
-import toast, { Toaster } from 'react-hot-toast';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -9,7 +8,6 @@ const Register = () => {
 
   const { createUser, googleLogin, githubLogin } = useContext(AuthContext);
 
-  const notify = () => toast('Here is your toast.');
 
   const createUserWithGithub = () => {
     githubLogin()
@@ -41,13 +39,48 @@ const Register = () => {
     const confirm = form.confirm.value;
 
     // condition for checking password and confirm password are the same
-    if (password !== confirm) {
+
+    if(password.length < 6){
       return Swal.fire({
         icon: 'error',
-        title: 'Oops...',
-        text: 'Password did not match!',
+        title: '',
+        text: 'Password must contain at least 6 characters!',
       });
     }
+
+    // if (!password.includes(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)){
+    //   return alert('hiiiiiiiiii')
+    // }
+
+    if (password.search(/[a-z]/) < 0) {
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Password must contain one smaller letter!',
+        });
+    }
+    if (password.search(/[A-Z]/) < 0) {
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Password must contain one capital letter!',
+        });
+    }
+    if (password.search(/[1-9]/) < 0) {
+        return Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Password must contain one digit!',
+        });
+    }
+
+      if (password !== confirm) {
+        return Swal.fire({
+          icon: 'warning',
+          title: 'Oops...',
+          text: 'Password did not match!',
+        });
+      }
 
     createUser(email, password)
       .then(res => {
