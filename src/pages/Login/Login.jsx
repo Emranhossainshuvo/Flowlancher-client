@@ -3,10 +3,13 @@ import "./login.css";
 import { ImGithub } from "react-icons/im";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+import Navbar from "../shared/Navbar/Navbar";
+import Footer from "../shared/Footer/Footer";
 
 const Login = () => {
 
-  const { logIn, googleLogin, githubLogin } = useContext(AuthContext);
+  const { logIn, googleLogin, githubLogin, user } = useContext(AuthContext);
 
   const loginUserWithGoogle = () => {
     googleLogin()
@@ -41,6 +44,10 @@ const Login = () => {
       .then(res => {
         const user = res.user;
         console.log(user)
+        Swal.fire({
+          icon: 'success',
+          text: 'Successfully logged in!',
+        });
       })
       .catch(error => {
         console.error(error)
@@ -49,7 +56,8 @@ const Login = () => {
 
   return (
     <>
-      <section className="bg-gray-100 md:m-5 min-h-screen flex box-border justify-center items-center">
+    <Navbar></Navbar>
+      <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
         <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
           <div className="md:w-1/2 px-8">
             <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
@@ -158,6 +166,7 @@ const Login = () => {
           </div>
         </div>
       </section>
+      <Footer></Footer>
     </>
   );
 };

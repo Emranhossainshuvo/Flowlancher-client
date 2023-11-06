@@ -3,6 +3,8 @@ import { ImGithub } from "react-icons/im";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import Navbar from "../shared/Navbar/Navbar";
+import Footer from "../shared/Footer/Footer";
 
 const Register = () => {
 
@@ -95,6 +97,7 @@ const Register = () => {
 
   return (
     <>
+    <Navbar></Navbar>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
         <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
           <div className="md:w-1/2 px-8">
@@ -207,6 +210,7 @@ const Register = () => {
           </div>
         </div>
       </section>
+      <Footer></Footer>
     </>
   );
 };

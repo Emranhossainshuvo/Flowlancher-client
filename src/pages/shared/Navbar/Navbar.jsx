@@ -1,8 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-    // nav items for small devices and larg devices
+
+  const { user, handleSignOut } = useContext(AuthContext)
+
+  // nav items for small devices and larg devices
   const navItems = <>
     <NavLink to='/'><li className="mr-10">Home</li></NavLink>
     <NavLink><li className="mr-10">Blogs</li></NavLink>
@@ -10,6 +16,20 @@ const Navbar = () => {
     <NavLink><li className="mr-10">Donate us</li></NavLink>
 
   </>;
+
+  const signOutUser = () => {
+    handleSignOut()
+      .then(() => {
+        // console.log('User signed out')
+         Swal.fire({
+          icon: 'info',
+          text: 'Successfully logged out!',
+        });
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
   return (
     <div className="navbar bg-transparent background-img text-white max-w-7xl mx-auto bg-base-100">
@@ -35,26 +55,29 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-        {
-            navItems
-        }
+            {
+              navItems
+            }
           </ul>
         </div>
         {/* div for name and icon */}
         <div className="flex items-center">
-            <img src="https://i.ibb.co/WDYxJ4y/icons8-handshake-64.png" alt="" />
-            <h2 className="text-4xl font-bold ms-5">FlowLancher</h2>
+          <img src="https://i.ibb.co/WDYxJ4y/icons8-handshake-64.png" alt="" />
+          <h2 className="text-4xl font-bold ms-5">FlowLancher</h2>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-            {
-                navItems
-            }
+          {
+            navItems
+          }
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login'><button>Login</button></Link>
+        {
+          user ? <Link><button onClick={signOutUser}>Log out</button></Link> :
+            <Link to='/login'><button>Login</button></Link>
+        }
       </div>
     </div>
   );
