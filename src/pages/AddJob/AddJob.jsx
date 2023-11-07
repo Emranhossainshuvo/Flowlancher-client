@@ -16,6 +16,7 @@ const AddJob = () => {
         const maximum = form.maximum.value; 
         const description = form.description.value; 
         const select = form.select.value; 
+        
         const newJob = {email, title, select,  deadline, minimum, maximum, description}; 
         // console.log(newJob)
 
@@ -35,6 +36,7 @@ const AddJob = () => {
                     text: 'Successfully added a job❤',
                   });
             }
+            console.log(data)
         })
     }
 
@@ -88,10 +90,10 @@ const AddJob = () => {
                            
 
                             <select name='select' className='w-full border-b-2 border-gray-300 mt-3 pb-1'>
-                                <option value="quantum">Quantum Computing 🧬🔬🌀</option>
-                                <option value="blockchain">Blockchain Technology🔗💱🔒</option>
-                                <option value="cloud">Cloud Computing🌐☁️💻</option>
-                                <option value="deep">Deep Learning🧠🤖💡</option>
+                                <option value="Quantum Computing">Quantum Computing 🧬🔬🌀</option>
+                                <option value="Blockchain Technology">Blockchain Technology🔗💱🔒</option>
+                                <option value="Cloud Computing">Cloud Computing🌐☁️💻</option>
+                                <option value="Deep Learning">Deep Learning🧠🤖💡</option>
                                 {/* <hr /> */}
                             </select>
                             <hr />
