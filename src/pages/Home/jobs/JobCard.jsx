@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const JobCard = ({ job }) => {
 
-    const { title, description, maximum, minimum, deadline, select } = job || {}
+    const {_id,  title, description, maximum, minimum, deadline, select } = job || {}
     const [showButton, setShowButton] = useState(false)
 
     return (
-        <div className='bg-[#e3f9eeb9] relative rounded-lg p-2 hover:bg-[#9eb9abf7] delay-100'
+        <div className='bg-[#e3f9eeb9] relative mt-20 rounded-lg p-2 hover:bg-[#9eb9abf7] delay-100'
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}
         >
@@ -20,8 +21,12 @@ const JobCard = ({ job }) => {
                 <p>Max. $ {maximum}</p>
             </div>
             {
-                showButton && 
-                <button className='absolute inset-0 m-auto px-4 py-2 backdrop-blur-sm border border-gray-300 rounded-lg'>Bid now</button>
+                showButton &&
+                <Link to={`/jobs/${_id}`}>
+                    <button className='absolute inset-0 m-auto px-4 py-2 backdrop-blur-sm border border-gray-300 rounded-lg'>Bid now</button>
+
+                </Link>
+
             }
         </div>
     );
