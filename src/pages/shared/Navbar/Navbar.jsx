@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import './navbar.css'
+// import './navbar.css'
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -32,7 +32,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-transparent background-img text-white max-w-7xl mx-auto bg-base-100">
+    <div className="navbar bg-transparent background-img  max-w-7xl mx-auto bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

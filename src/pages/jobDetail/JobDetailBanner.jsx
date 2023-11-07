@@ -2,7 +2,7 @@
 
 const JobDetailBanner = () => {
     return (
-        <div className="hero max-w-7xl mx-auto mt-20 rounded-2xl min-h-[80vh]" style={{ backgroundImage: 'url(https://i.ibb.co/6JR4qxX/12297152-4892463.jpg)' }}>
+        <div className="hero max-w-7xl mx-auto mt-20 rounded-2xl min-h-[60vh]" style={{ backgroundImage: 'url(https://i.ibb.co/6JR4qxX/12297152-4892463.jpg)' }}>
             <div className="hero-overlay rounded-2xl bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">
                 <div className="max-w-md">
