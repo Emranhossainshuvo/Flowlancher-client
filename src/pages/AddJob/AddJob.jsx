@@ -2,6 +2,7 @@
 import Navbar from '../shared/Navbar/Navbar';
 import Footer from '../shared/Footer/Footer';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 const AddJob = () => {
 
@@ -16,7 +17,25 @@ const AddJob = () => {
         const description = form.description.value; 
         const select = form.select.value; 
         const newJob = {email, title, select,  deadline, minimum, maximum, description}; 
-        console.log(newJob)
+        // console.log(newJob)
+
+        // send a post request to the server
+        fetch('http://localhost:5000/jobs', {
+            method: "POST", 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(newJob)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Successfully added a job❤',
+                  });
+            }
+        })
     }
 
     return (

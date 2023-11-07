@@ -40,6 +40,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
+    const photo = form.photo.value; 
 
     // condition for checking password and confirm password are the same
 
