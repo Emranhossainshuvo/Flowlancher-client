@@ -16,10 +16,12 @@ const JobCard = ({ job }) => {
             <p> 🕙 {deadline}</p>
             <div className='flex gap-5 bg-[#badbcaf7] w-1/2 ps-2 rounded-md'>
                 <p>Min. $ {minimum}</p>
+                -
                 <p>Max. $ {maximum}</p>
             </div>
             {
-                showButton && <button className='absolute inset-0 m-auto px-4 py-2 backdrop-blur-sm border border-gray-300 rounded-md'>Bid now</button>
+                showButton && 
+                <button className='absolute inset-0 m-auto px-4 py-2 backdrop-blur-sm border border-gray-300 rounded-lg'>Bid now</button>
             }
         </div>
     );

@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import React from "react";
 import {Helmet} from "react-helmet";
 import Jobs from "../jobs/Jobs";
+import Donators from "../donators/Donators";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Banner></Banner>
             <Jobs></Jobs>
             <h2 className="text-3xl">This is home</h2>
+            <Donators></Donators>
             <Footer></Footer>            
         </div>
     );
