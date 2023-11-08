@@ -1,20 +1,11 @@
 import Swal from "sweetalert2";
 
 
-const MyPostedJobRow = ({ job }) => {
+const MyPostedJobRow = ({ job, handleDelete }) => {
 
     const { _id, title, description, maximum, minimum, deadline, select } = job || {}
 
-    const handleDelete = id => {
-        
-        fetch(`http://localhost:5000/jobs/${id}`, {
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(error => {
-                console.log(error)
-        })
-    }
+    
 
     
 

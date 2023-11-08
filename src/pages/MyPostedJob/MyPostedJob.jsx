@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import MyPostedJobRow from './MyPostedJobRow';
+import Swal from 'sweetalert2';
 
 const MyPostedJob = () => {
 
@@ -18,6 +19,43 @@ const MyPostedJob = () => {
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [url])
+
+    const handleDelete = id => {
+        
+        fetch(`http://localhost:5000/jobs/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+
+            
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                    console.log('deleted')
+                    if(data.deletedCount > 0){
+                        console.log('delet')
+                        const remaining = jobs.filter(job => job._id !== id)
+                        setJobs(remaining)
+                    }
+                }
+            });
+            
+        })
+    }
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -52,6 +90,7 @@ const MyPostedJob = () => {
                                 jobs.map(job => <MyPostedJobRow key={job._id}
 
                                     job={job}
+                                    handleDelete={handleDelete}
                                 ></MyPostedJobRow>)
                             }
                         </tbody>

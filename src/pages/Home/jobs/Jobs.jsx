@@ -17,6 +17,8 @@ const Jobs = () => {
 
     // ;
 
+    
+
     return (
         <div className="max-w-7xl mx-auto">
             <div className="text-center py-5 rounded-lg bg-[#61677A]">
