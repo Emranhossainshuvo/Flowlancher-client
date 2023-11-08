@@ -29,7 +29,7 @@ const Banner = () => {
                 <h1 className="text-3xl font-medium tracking-wide  text-white md:text-4xl font-custom">The best Apple Watch apps</h1>
                 <p className="mt-4 text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
                 <div className="mt-6">
-                    <a href="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-blue-500 rounded-md md:inline hover:bg-blue-400">Download from App Store</a>
+                    <a href="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-[#435585] rounded-md md:inline hover:bg-[#363062]">Download from App Store</a>
                 </div>
             </div>
         </div>

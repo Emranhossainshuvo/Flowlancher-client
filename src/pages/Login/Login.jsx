@@ -63,13 +63,13 @@ const Login = () => {
   return (
     <>
       <Helmet><title>FlowLancher | Login</title></Helmet>
-      <div  style={{backgroundImage: 'url(https://i.ibb.co/jy0r9cr/31562198-rd0d-lrjx-220829.jpg)', backgroundSize: 'cover'}}>
+      <div   style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
         <Navbar></Navbar>
         <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
-          <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
+          <div className="bg-[#F5E8C7] rounded-2xl flex max-w-5xl p-5 items-center">
             <div className="md:w-1/2 px-8">
-              <h2 className="font-bold text-3xl text-[#002D74]">Login</h2>
-              <p className="text-sm mt-4 text-[#002D74]">
+              <h2 className="font-bold text-3xl text-[#363062]">Login</h2>
+              <p className="text-sm mt-4 text-[#363062]">
                 If you already a member, easily log in now.
               </p>
 
@@ -114,7 +114,7 @@ const Login = () => {
                   </svg>
                 </div>
                 <button
-                  className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
+                  className="bg-[#363062] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#435585] font-medium"
                   type="submit"
                 >
                   Login
@@ -160,7 +160,7 @@ const Login = () => {
               <div className="mt-4 text-sm flex justify-between items-center container-mr">
                 <p className="mr-3 md:mr-0 ">If you do not have an account..</p>
                 <Link to='/register'>
-                  <button className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+                  <button className="hover:border register text-white bg-[#363062] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#435585] font-semibold duration-300">
                     Register
                   </button>
                 </Link>
@@ -174,8 +174,8 @@ const Login = () => {
             </div>
           </div>
         </section>
-        <Footer></Footer>
       </div>
+        <Footer></Footer>
     </>
   );
 };
