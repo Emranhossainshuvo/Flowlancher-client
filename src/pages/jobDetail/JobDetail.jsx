@@ -30,21 +30,21 @@ const JobDetail = () => {
                 <p>Deadline: {deadline}</p>
                 <p>Price range: {minimum} - {maximum}</p>
                 {/* place your bid form */}
-                <div className="wful">
+                <div className="pb-10">
                     <form onSubmit={handleBidJob}>
                         <label htmlFor="name">Price:</label><br />
-                        <input type="text" name="price" /><br /><br />
+                        <input className="rounded-md h-8 w-2/5" type="text" name="price" /><br /><br />
 
                         <label htmlFor="address">Deadline:</label><br />
-                        <input type="text" name="deadline"  /><br /><br />
+                        <input className="rounded-md h-8 w-2/5" type="text" name="deadline"  /><br /><br />
 
                         <label htmlFor="contact">Email:</label><br />
-                        <input type="text" name="email"  /><br /><br />
+                        <input className="rounded-md h-8 w-2/5" type="text" name="email"  /><br /><br />
 
                         <label htmlFor="email">Buyer:</label><br />
-                        <input type="email" name="buyer"  /><br /><br />
+                        <input className="rounded-md h-8 w-2/5" type="email" name="buyer"  /><br /><br />
 
-                        <input type="submit" value="Submit" />
+                        <input className="btn bg-transparent " type="submit" value="Submit" />
                     </form>
                 </div>
                 {/* footer */}
