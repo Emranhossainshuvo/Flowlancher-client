@@ -83,14 +83,14 @@ const AddJob = () => {
                         <div className="relative z-0 w-full mb-6 group">
                             <input type="text" name="description" id="floatin g_phone" className="block py-2.5 px-0 w-full text-sm font-semibold text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0    peer" placeholder=" " />
                             <label
-                                className="peer-focus:font-medium font-semibold absolute text-sm text-white font-semibold  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description
+                                className="peer-focus:font-medium font-semibold absolute text-sm text-white  dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-white peer-focus:dark:text-white peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Description
                             </label>
                         </div>
                         <div className="relative z-0 w-full mb-6 group">
 
                            
 
-                            <select name='select' className='w-full text-white font-semibold border-b-2 border-gray-300 bg-transparent mt-3 pb-1'>
+                            <select name='select' className='w-full text-white bg-[#454545] font-semibold border-b-2 border-gray-300 bg-transparent mt-3 pb-1'>
                                 <option value="Quantum Computing">Quantum Computing 🧬🔬🌀</option>
                                 <option value="Blockchain Technology">Blockchain Technology🔗💱🔒</option>
                                 <option value="Cloud Computing">Cloud Computing🌐☁️💻</option>
