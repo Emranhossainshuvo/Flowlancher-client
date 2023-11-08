@@ -25,11 +25,11 @@ const Banner = () => {
                 <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full md:mx-0 focus:outline-none hover:bg-blue-500"></button>
             </div> */}
 
-            <div className="max-w-lg md:mx-12 md:order-2">
-                <h1 className="text-3xl tracking-wide font-semibold text-black md:text-4xl font-custom">The best Apple Watch apps</h1>
-                <p className="mt-4 text-black font-semibold">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut quia asperiores alias vero magnam recusandae adipisci ad vitae laudantium quod rem voluptatem eos accusantium cumque.</p>
+            <div className="max-w-lg pb-3 rounded-md ps-3 md:mx-12 bg-[#F5E8C7] md:order-2">
+                <h1 className="text-3xl tracking-wide font-semibold text-black   pt-2 md:text-4xl font-custom">The best online job marketplace</h1>
+            
                 <div className="mt-6">
-                    <a href="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-[#435585] rounded-md md:inline hover:bg-[#363062]">Download from App Store</a>
+                    <a href="#" className="block px-3 py-2 font-semibold text-center text-white transition-colors duration-200 transform bg-[#435585] rounded-md md:inline hover:bg-[#363062]">Explore</a>
                 </div>
             </div>
         </div>

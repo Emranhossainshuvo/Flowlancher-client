@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <>
       <Helmet><title>FlowLancher | Login</title></Helmet>
-      <div style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
+      <div className="pb-20" style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
         <Navbar></Navbar>
         <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
           <div className="bg-[#F5E8C7] rounded-2xl flex max-w-5xl p-5 items-center">
@@ -121,9 +121,9 @@ const Login = () => {
                 </button>
               </form>
               <div className="mt-10 grid  items-center text-gray-500 or-grid">
-                <hr className="border-gray-400" />
+                <hr className="border-[#363062]" />
                 <p className="text-center text-sm">OR</p>
-                <hr className="border-gray-400" />
+                <hr className="border-[#363062]" />
               </div>
               <button onClick={loginUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
                 <svg

@@ -169,9 +169,9 @@ const Register = () => {
                 </button>
               </form>
               <div className="mt-10 grid  items-center text-gray-500 or-grid">
-                <hr className="border-gray-400" />
+                <hr className="border-[#363062]" />
                 <p className="text-center text-sm">OR</p>
-                <hr className="border-gray-400" />
+                <hr className="border-[#363062]" />
               </div>
               <button onClick={createUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
                 <svg
