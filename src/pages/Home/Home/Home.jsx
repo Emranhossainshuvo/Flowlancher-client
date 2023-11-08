@@ -10,17 +10,17 @@ import Donators from "../donators/Donators";
 
 const Home = () => {
     return (
-        <div>
-            <div style={{backgroundImage: 'url(https://i.ibb.co/jR4xKR8/1192277-OSVNZK0.jpg)'}}>
+        <div className="text-white">
+            <div style={{backgroundImage: 'url(https://i.ibb.co/jR4xKR8/1192277-OSVNZK0.jpg)', backgroundSize: 'cover'}}>
                 <Navbar></Navbar>
                 <Banner></Banner>
             <Jobs></Jobs>
             <Donators></Donators>
+            <h2 className="text-3xl">This is home</h2>
             <Footer></Footer>
             </div>
             <Helmet><title>FlowLancher | Home</title></Helmet>
             {/* <Skills></Skills> */}
-            <h2 className="text-3xl">This is home</h2>
         </div>
     );
 };
