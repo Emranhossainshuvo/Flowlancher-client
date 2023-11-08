@@ -1,14 +1,28 @@
+import Swal from "sweetalert2";
 
 
 const MyPostedJobRow = ({ job }) => {
 
     const { _id, title, description, maximum, minimum, deadline, select } = job || {}
 
+    const handleDelete = id => {
+        
+        fetch(`http://localhost:5000/jobs/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(error => {
+                console.log(error)
+        })
+    }
+
+    
+
     return (
         <tr className=" border-b  dark:border-gray-700">
             <th scope="row" className="px-6 text-lg flex justify-between items-center py-4  text-white font-semibold whitespace-nowrap">
                 {title}
-                <button className="btn bg-white btn-square btn-outline">
+                <button onClick={() => handleDelete(_id)} className="btn bg-white btn-square btn-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
             </th>
