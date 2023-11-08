@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <>
       <Helmet><title>FlowLancher | Login</title></Helmet>
-      <div   style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
+      <div style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
         <Navbar></Navbar>
         <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
           <div className="bg-[#F5E8C7] rounded-2xl flex max-w-5xl p-5 items-center">

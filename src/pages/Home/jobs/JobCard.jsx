@@ -7,7 +7,7 @@ const JobCard = ({ job }) => {
     const [showButton, setShowButton] = useState(false)
 
     return (
-        <div className='bg-[#435585] opacity-80 relative mt-20 rounded-lg p-2 hover:bg-[#818FB4] delay-100'
+        <div className='bg-[#435585]  relative mt-20 rounded-lg p-2 hover:bg-[#818FB4] delay-100'
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}
         >
@@ -23,7 +23,7 @@ const JobCard = ({ job }) => {
             {
                 showButton &&
                 <Link to={`/jobs/${_id}`}>
-                    <button className='absolute inset-0 m-auto px-4 py-2 backdrop-blur-sm border border-gray-300 rounded-lg'>Bid now</button>
+                    <button className='absolute btn w-2/5 text-white bg-[#363062] inset-0 m-auto px-4 py-2 hover:bg-[#435585] backdrop-blur-sm border border-gray-300 rounded-lg'>Bid now</button>
 
                 </Link>
 
