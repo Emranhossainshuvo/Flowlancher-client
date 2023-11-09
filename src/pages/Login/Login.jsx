@@ -63,32 +63,32 @@ const Login = () => {
   return (
     <>
       <Helmet><title>FlowLancher | Login</title></Helmet>
-      <div className="pb-20" style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
+      <div className="pb-20 text-white" style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
         <Navbar></Navbar>
         <section className=" md:m-5 min-h-screen flex box-border justify-center items-center">
-          <div className="bg-[#F5E8C7] rounded-2xl flex max-w-5xl p-5 items-center">
+          <div className="bg-[#6d6f6e] rounded-2xl flex max-w-5xl p-5 items-center">
             <div className="md:w-1/2 px-8">
-              <h2 className="font-bold text-3xl text-[#363062]">Login</h2>
-              <p className="text-sm mt-4 text-[#363062]">
+              <h2 className="font-bold text-3xl text-white">Login</h2>
+              <p className=" mt-4 text-lg font-semibold text-white">
                 If you already a member, easily log in now.
               </p>
 
               <form onSubmit={handleLogin} className="flex flex-col gap-4">
                 <input
-                  className="p-2 mt-8 rounded-xl border"
+                  className="p-2 text-black mt-8 rounded-xl border"
                   type="email"
                   name="email"
                   placeholder="Email"
                 />
                 <div className="relative">
                   <input
-                    className="p-2 rounded-xl border w-full"
+                    className="p-2 text-black rounded-xl border w-full"
                     type="password"
                     name="password"
                     id="password"
                     placeholder="Password"
                   />
-                  <svg
+                  {/* <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
                     height="16"
@@ -99,7 +99,7 @@ const Login = () => {
                   >
                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"></path>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"></path>
-                  </svg>
+                  </svg> */}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -122,10 +122,10 @@ const Login = () => {
               </form>
               <div className="mt-10 grid  items-center text-gray-500 or-grid">
                 <hr className="border-[#363062]" />
-                <p className="text-center text-sm">OR</p>
+                <p className="text-center text-lg font-semibold text-white">OR</p>
                 <hr className="border-[#363062]" />
               </div>
-              <button onClick={loginUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+              <button onClick={loginUserWithGoogle} className="bg-white text-black text-lg font-semibold border py-2 w-full rounded-xl mt-5 flex justify-center items-center  hover:scale-105 duration-300 hover:bg-[#60a8bc4f] ">
                 <svg
                   className="mr-3"
                   xmlns="http://www.w3.org/2000/svg"
@@ -152,13 +152,13 @@ const Login = () => {
                 Continue with Google
               </button>
 
-              <button onClick={createUserWithGithub} className="bg-white border py-2 w-full rounded-xl mt-2 gap-3 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+              <button onClick={createUserWithGithub} className="bg-white border py-2 w-full text-lg rounded-xl mt-2 gap-3 flex justify-center items-center font-semibold hover:scale-105 duration-300 hover:bg-[#60a8bc4f] text-black">
                 <ImGithub />
                 Continue with Github
               </button>
 
               <div className="mt-4 text-sm flex justify-between items-center container-mr">
-                <p className="mr-3 md:mr-0 ">If you do not have an account..</p>
+                <p className="mr-3 text-md font-semibold md:mr-0 ">If you do not have an account..</p>
                 <Link to='/register'>
                   <button className="hover:border register text-white bg-[#363062] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#435585] font-semibold duration-300">
                     Register

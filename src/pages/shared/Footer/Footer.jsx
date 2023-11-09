@@ -19,102 +19,102 @@ const Footer = () => {
             </a>
           </div>
           <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Social links</p>
+            <p className="pb-1 text-lg font-semibold">Social links</p>
             <ul>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Twitter
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Facebook
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  LinkedIn
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Instagram
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  YouTube
                 </a>
               </li>
             </ul>
           </div>
           
           <div className="col-span-6 text-center md:text-left md:col-span-3">
-            <p className="pb-1 text-lg font-medium">Find us</p>
+            <p className="pb-1 text-lg font-semibold">Find us</p>
             <ul>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Contact Page
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Location Page
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  Support
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  LinkBlog
                 </a>
               </li>
-              <li>
+              <li className="text-lg font-semibold">
                 <a
                   rel="noopener noreferrer"
                   href="#"
                   className="hover:dark:text-violet-400"
                 >
-                  Link
+                  FAQs
                 </a>
               </li>
             </ul>

@@ -59,9 +59,9 @@ const MyPostedJob = () => {
 
     return (
         <div className='max-w-7xl mx-auto'>
-            <div className='bg-[#272829]'>
+            <div className='bg-[#272829] mb-20'>
                 <Navbar></Navbar>
-                <Helmet><title>FlowLancher | My posted jobs</title></Helmet>
+                <Helmet><title>FlowLancher | Update job</title></Helmet>
                 {/* user specific job will code here */}
 
                 <div className="relative pt-28 pb-28 overflow-x-auto">

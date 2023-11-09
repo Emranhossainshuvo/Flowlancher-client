@@ -106,10 +106,10 @@ const Register = () => {
       <div style={{backgroundImage: 'url(https://i.ibb.co/xMtsGzH/31999405-2208-w018-n002-1174b-p15-1174.jpg)'}}>
         <Navbar></Navbar>
         <section className=" pb-16 min-h-screen flex box-border justify-center items-center">
-          <div className="bg-[#dfa674] rounded-2xl flex max-w-5xl p-5 items-center">
+          <div className="bg-[#6d6f6e] rounded-2xl flex max-w-5xl p-5 items-center">
             <div className="md:w-1/2 px-8">
-              <h2 className="font-bold text-3xl text-[#002D74]">Register</h2>
-              <p className="text-sm mt-4 text-[#002D74]">
+              <h2 className="font-bold text-3xl text-white">Register</h2>
+              <p className="text-sm mt-4 text-white">
                 Haven't register yet, register now!!
               </p>
               <Helmet><title>FlowLancher | Register</title></Helmet>
@@ -162,7 +162,7 @@ const Register = () => {
 
                 </div>
                 <button
-                  className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
+                  className="bg-[#363062] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#002c7424] font-medium"
                   type="submit"
                 >
                   Register
@@ -170,10 +170,10 @@ const Register = () => {
               </form>
               <div className="mt-10 grid  items-center text-gray-500 or-grid">
                 <hr className="border-[#363062]" />
-                <p className="text-center text-sm">OR</p>
+                <p className="text-center text-lg font-semibold text-white">OR</p>
                 <hr className="border-[#363062]" />
               </div>
-              <button onClick={createUserWithGoogle} className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+              <button onClick={createUserWithGoogle} className="bg-white  border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-lg hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-semibold">
                 <svg
                   className="mr-3"
                   xmlns="http://www.w3.org/2000/svg"
@@ -199,15 +199,15 @@ const Register = () => {
                 </svg>
                 Continue with Google
               </button>
-              <button onClick={createUserWithGithub} className="bg-white border py-2 w-full rounded-xl mt-2 gap-3 flex justify-center items-center text-sm hover:scale-105 duration-300 hover:bg-[#60a8bc4f] font-medium">
+              <button onClick={createUserWithGithub} className="bg-white border py-2 w-full rounded-xl mt-2 gap-3 flex justify-center items-center  hover:scale-105 font-semibold text-lg duration-300 hover:bg-[#60a8bc4f] ">
                 <ImGithub />
                 Continue with Github
               </button>
 
               <div className="mt-4 text-sm flex justify-between items-center container-mr">
-                <p className="mr-3 md:mr-0 ">If you alredy have an account..</p>
+                <p className="mr-3 text-white text-lg font-semibold md:mr-0 ">If you alredy have an account..</p>
                 <Link to='/login'>
-                  <button className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+                  <button className="hover:border register text-white bg-[#363062] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
                     Login
                   </button>
                 </Link>

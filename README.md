@@ -1,8 +1,13 @@
-# React + Vite
+# About FlowLancher projects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-This application directly connected to mongodb and whatever you do in the application its directly saved in the mongoDB 
 
-Currently, two official plugins are available:
+-This is a single page application that makes it faster 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-In the My posted jobs tab you will find the jobs you posted only your posted jobs will appear there
+
+-In the my posted jobs tab you can delete an job from you posted job storage and you can update a job from there
+
+-This website has firebase authentication you can login in this website by using your emai or you can use google or github to varify your identity
+
+## here's the live link for the application.
