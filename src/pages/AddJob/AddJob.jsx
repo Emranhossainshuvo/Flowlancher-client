@@ -45,6 +45,8 @@ const AddJob = () => {
         <div style={{backgroundImage: 'url(https://i.ibb.co/xFbgqFd/black-background-with-stationery.jpg)'}}>
             <Navbar></Navbar>
             
+            <h3 className='text-center text-4xl py-10 text-white font-semibold'>Add a job</h3>
+
             <Helmet><title>FlowLancher | Add job</title></Helmet>
 
             <div className='mt-10 pb-20 max-w-7xl mx-auto'>

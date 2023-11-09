@@ -42,7 +42,7 @@ const MyPostedJob = () => {
                 if (result.isConfirmed) {
                     Swal.fire({
                         title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        text: "Your job has been deleted.",
                         icon: "success"
                     });
                     console.log('deleted')

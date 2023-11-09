@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -5,9 +6,9 @@ const MyPostedJobRow = ({ job, handleDelete }) => {
 
     const { _id, title, description, maximum, minimum, deadline, select } = job || {}
 
-    
 
-    
+
+
 
     return (
         <tr className=" border-b  dark:border-gray-700">
@@ -28,9 +29,11 @@ const MyPostedJobRow = ({ job, handleDelete }) => {
                 {deadline}
             </td>
             <td className="px-6 text-lg py-4">
+                <Link to={`/updatejob/${_id}`}>
                 <button className="btn hover:btn-neutral">
                     Update
                 </button>
+                </Link>
             </td>
         </tr>
     );
