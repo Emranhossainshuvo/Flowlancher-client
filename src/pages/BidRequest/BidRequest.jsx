@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 const BidRequest = () => {
     return (
-        <div>
+        <div className='bg-gray-600'>
             <Helmet><title>FlowLancher | Bid request</title></Helmet>
             <Navbar></Navbar>
             <h4 className='text-5xl'> bid request are comming</h4>
