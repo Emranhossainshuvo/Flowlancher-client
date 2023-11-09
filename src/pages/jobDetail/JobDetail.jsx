@@ -2,11 +2,16 @@ import { useLoaderData } from "react-router-dom";
 import Footer from "../shared/Footer/Footer";
 import Navbar from "../shared/Navbar/Navbar";
 import JobDetailBanner from "./JobDetailBanner";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 // import { useContext } from "react";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const JobDetail = () => {
+
+    const {user} = useContext(AuthContext)
 
     // const {user} = useContext(AuthContext); 
 
@@ -16,6 +21,33 @@ const JobDetail = () => {
 
     const handleBidJob = e => {
         e.preventDefault();
+        const form = e.target; 
+        const email = form.email.value; 
+        const deadline = form.deadline.value; 
+        const price = form.price.value; 
+        const  buyer = form.buyer.value; 
+        const newBid = {email, deadline, price, buyer}
+        console.log(newBid)
+
+        //  send data to the server and then database
+
+        fetch('http://localhost:5000/bids', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(newBid)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.acknowledged){
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Successfully bid in the job!',
+                  });
+            }
+        })
+
     }
 
     return (
@@ -33,16 +65,16 @@ const JobDetail = () => {
                 <div className="pb-10">
                     <form onSubmit={handleBidJob}>
                         <label htmlFor="name">Price:</label><br />
-                        <input className="rounded-md h-8 w-2/5" type="text" name="price" /><br /><br />
+                        <input className="rounded-md ps-2 h-8 w-2/5" type="number" name="price" /><br /><br />
 
                         <label htmlFor="address">Deadline:</label><br />
-                        <input className="rounded-md h-8 w-2/5" type="text" name="deadline"  /><br /><br />
+                        <input className="rounded-md ps-2 h-8 w-2/5" type="date" name="deadline"  /><br /><br />
 
                         <label htmlFor="contact">Email:</label><br />
-                        <input className="rounded-md h-8 w-2/5" type="text" name="email"  /><br /><br />
+                        <input disabled defaultValue={user?.email} className="rounded-md ps-2 h-8 w-2/5" type="text" name="email"  /><br /><br />
 
                         <label htmlFor="email">Buyer:</label><br />
-                        <input className="rounded-md h-8 w-2/5" type="email" name="buyer"  /><br /><br />
+                        <input className="rounded-md ps-2 h-8 w-2/5" type="email" name="buyer"  /><br /><br />
 
                         <input className="btn bg-transparent " type="submit" value="Submit" />
                     </form>
