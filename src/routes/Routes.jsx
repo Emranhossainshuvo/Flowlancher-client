@@ -55,7 +55,7 @@ const router = createBrowserRouter([
           path: '/updatejob/:id', 
           element: <UpdateJob></UpdateJob>, 
           loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
-        }
+        }, 
     ]
   },
 ]);
