@@ -32,7 +32,7 @@ const UpdateJob = () => {
         // console.log(newJob)
 
         // send a post request to the server
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://flow-lancher-server.vercel.app/jobs/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

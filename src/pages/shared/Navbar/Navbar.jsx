@@ -10,11 +10,11 @@ const Navbar = () => {
 
   // nav items for small devices and larg devices
   const navItems = <>
-    <NavLink to='/'><li className="mr-10">Home</li></NavLink>
-    <NavLink to='/addjob'><li className="mr-10">Add job</li></NavLink>
-    <NavLink to='/mypostedjobs'><li className="mr-10">My posted jobs</li></NavLink>
-    <NavLink to='/mybids'><li className="mr-10">My Bids</li></NavLink>
-    <NavLink to='/bidrequest'><li className="mr-10">Bid Requests</li></NavLink>
+    <NavLink className='text-white' to='/'><li className="mr-10">Home</li></NavLink>
+    <NavLink className='text-white' to='/addjob'><li className="mr-10">Add job</li></NavLink>
+    <NavLink className='text-white' to='/mypostedjobs'><li className="mr-10">My posted jobs</li></NavLink>
+    <NavLink className='text-white' to='/mybids'><li className="mr-10">My Bids</li></NavLink>
+    <NavLink className='text-white' to='/bidrequest'><li className="mr-10">Bid Requests</li></NavLink>
   </>;
 
   const signOutUser = () => {
@@ -27,12 +27,12 @@ const Navbar = () => {
         });
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
   }
 
   return (
-    <div className="navbar text-[#FFF6E0] bg-transparent background-img  max-w-7xl mx-auto bg-base-100">
+    <div className="navbar  text-[#FFF6E0] bg-transparent background-img  max-w-7xl mx-auto bg-base">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

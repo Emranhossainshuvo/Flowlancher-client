@@ -12,7 +12,7 @@ const MyBids = () => {
     const { user } = useContext(AuthContext)
     const [bids, setBids] = useState([])
 
-    const url = `http://localhost:5000/bids?email=${user.email}`
+    const url = `https://flow-lancher-server.vercel.app/bids?email=${user.email}`
 
 
     useEffect(() => {

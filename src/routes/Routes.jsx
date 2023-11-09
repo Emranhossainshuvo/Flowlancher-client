@@ -49,12 +49,12 @@ const router = createBrowserRouter([
         {
           path: '/jobs/:id', 
           element: <JobDetail></JobDetail>,
-          loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader: ({params}) => fetch(`https://flow-lancher-server.vercel.app/jobs/${params.id}`)
         }, 
         {
           path: '/updatejob/:id', 
           element: <UpdateJob></UpdateJob>, 
-          loader: ({params}) => fetch(`http://localhost:5000/jobs/${params.id}`)
+          loader: ({params}) => fetch(`https://flow-lancher-server.vercel.app/jobs/${params.id}`)
         }, 
     ]
   },

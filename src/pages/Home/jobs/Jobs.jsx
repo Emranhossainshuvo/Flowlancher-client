@@ -8,7 +8,7 @@ const Jobs = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch('https://flow-lancher-server.vercel.app/jobs')
             .then(res => res.json())
             .then(data => setJobs(data))
     }, [])

@@ -28,11 +28,11 @@ const JobDetail = () => {
         const buyer = form.buyer.value;
         const select = form.select.value; 
         const newBid = { email, deadline, price, buyer, select }
-        console.log(newBid)
+        // console.log(newBid)
 
         //  send data to the server and then database
 
-        fetch('http://localhost:5000/bids', {
+        fetch('https://flow-lancher-server.vercel.app/bids', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

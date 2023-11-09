@@ -12,7 +12,7 @@ const MyPostedJob = () => {
     const { user } = useContext(AuthContext)
     const [jobs, setJobs] = useState([]);
 
-    const url = `http://localhost:5000/jobs?email=${user?.email}`
+    const url = `https://flow-lancher-server.vercel.app/jobs?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -22,7 +22,7 @@ const MyPostedJob = () => {
 
     const handleDelete = id => {
         
-        fetch(`http://localhost:5000/jobs/${id}`, {
+        fetch(`https://flow-lancher-server.vercel.app/jobs/${id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())
@@ -45,9 +45,9 @@ const MyPostedJob = () => {
                         text: "Your job has been deleted.",
                         icon: "success"
                     });
-                    console.log('deleted')
+                    // console.log('deleted')
                     if(data.deletedCount > 0){
-                        console.log('delet')
+                        // console.log('delet')
                         const remaining = jobs.filter(job => job._id !== id)
                         setJobs(remaining)
                     }

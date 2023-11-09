@@ -16,10 +16,10 @@ const Register = () => {
     githubLogin()
       .then(res => {
         const user = res.user;
-        console.log(user)
+        // console.log(user)
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
   }
 
@@ -27,10 +27,10 @@ const Register = () => {
     googleLogin()
       .then(res => {
         const user = res.user;
-        console.log(user)
+        // console.log(user)
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
   }
 
@@ -88,8 +88,8 @@ const Register = () => {
 
     createUser(email, password)
       .then(res => {
-        const user = res.user;
-        console.log(user)
+        // const user = res.user;
+        // console.log(user)
         Swal.fire({
           icon: 'success',
           text: 'Successfully registered!',

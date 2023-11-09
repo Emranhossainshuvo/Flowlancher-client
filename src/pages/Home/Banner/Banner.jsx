@@ -34,7 +34,7 @@ const Banner = () => {
             </div>
         </div>
 
-        <div className="flex items-center justify-center w-full h-96 md:w-1/2">
+        <div className="md:flex items-center justify-center w-full h-96 md:w-1/2">
             <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://i.ibb.co/xCCwTcP/studio-shot-positive-dark-skinned-girl-wears-round-transparent-glasses.jpg" alt="A girl pointing on left side" />
         </div>
     </div>

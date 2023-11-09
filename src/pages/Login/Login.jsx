@@ -18,12 +18,12 @@ const Login = () => {
     googleLogin()
       .then(res => {
         const user = res.user;
-        console.log(user)
+        // console.log(user)
         navigate(location?.state ? location?.state : '/')
         // console.log(res)
       })
       .catch(error => {
-        console.log(error)
+        // console.log(error)
       })
   }
 
@@ -31,11 +31,11 @@ const Login = () => {
     githubLogin()
       .then(res => {
         const user = res.user;
-        console.log(user)
+        // console.log(user)
         navigate(location?.state ? location?.state : '/')
       })
       .catch(err => {
-        console.log(err)
+        // console.log(err)
       })
   }
 
@@ -48,7 +48,7 @@ const Login = () => {
     logIn(email, password)
       .then(res => {
         const user = res.user;
-        console.log(user)
+        // console.log(user)
         Swal.fire({
           icon: 'success',
           text: 'Successfully logged in!',
