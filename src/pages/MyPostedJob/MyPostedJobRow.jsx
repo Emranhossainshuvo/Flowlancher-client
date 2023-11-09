@@ -19,6 +19,9 @@ const MyPostedJobRow = ({ job, handleDelete }) => {
                 </button>
             </th>
 
+            {/* <td className="px-6 text-lg py-4">
+                ${select}
+            </td> */}
             <td className="px-6 text-lg py-4">
                 ${minimum}
             </td>

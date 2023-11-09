@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 const JobDetail = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     // const {user} = useContext(AuthContext); 
 
@@ -21,12 +21,13 @@ const JobDetail = () => {
 
     const handleBidJob = e => {
         e.preventDefault();
-        const form = e.target; 
-        const email = form.email.value; 
-        const deadline = form.deadline.value; 
-        const price = form.price.value; 
-        const  buyer = form.buyer.value; 
-        const newBid = {email, deadline, price, buyer}
+        const form = e.target;
+        const email = form.email.value;
+        const deadline = form.deadline.value;
+        const price = form.price.value;
+        const buyer = form.buyer.value;
+        const select = form.select.value; 
+        const newBid = { email, deadline, price, buyer, select }
         console.log(newBid)
 
         //  send data to the server and then database
@@ -35,18 +36,18 @@ const JobDetail = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(newBid)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.acknowledged){
-                Swal.fire({
-                    icon: 'success',
-                    text: 'Successfully bid in the job!',
-                  });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    Swal.fire({
+                        icon: 'success',
+                        text: 'Successfully bid in the job!',
+                    });
+                }
+            })
 
     }
 
@@ -65,18 +66,27 @@ const JobDetail = () => {
                 <div className="pb-10">
                     <form onSubmit={handleBidJob}>
                         <label htmlFor="name">Price:</label><br />
-                        <input className="rounded-md ps-2 h-8 w-2/5" type="number" name="price" /><br /><br />
+                         <input required className="rounded-md ps-2 h-8 w-2/5" type="number" name="price" /><br /><br />
 
                         <label htmlFor="address">Deadline:</label><br />
-                        <input className="rounded-md ps-2 h-8 w-2/5" type="date" name="deadline"  /><br /><br />
+                         <input required className="rounded-md ps-2 h-8 w-2/5" type="date" name="deadline" /><br /><br />
 
                         <label htmlFor="contact">Email:</label><br />
-                        <input disabled defaultValue={user?.email} className="rounded-md ps-2 h-8 w-2/5" type="text" name="email"  /><br /><br />
+                         <input required disabled defaultValue={user?.email} className="rounded-md ps-2 h-8 w-2/5" type="text" name="email" /><br /><br />
 
                         <label htmlFor="email">Buyer:</label><br />
-                        <input className="rounded-md ps-2 h-8 w-2/5" type="email" name="buyer"  /><br /><br />
+                         <input required className="rounded-md ps-2 h-8 w-2/5" type="email" name="buyer" /><br /><br />
 
-                        <input className="btn bg-transparent " type="submit" value="Submit" />
+                        <select name='select' className='w-2/5 mb-10 h-10 rounded-md text-white bg-[#454545] font-semibold border-b-2 border-gray-300 bg-transparent mt-3 pb-1'>
+                            <option value="Quantum Computing">Quantum Computing 🧬🔬🌀</option>
+                            <option value="Blockchain Technology">Blockchain Technology🔗💱🔒</option>
+                            <option value="Cloud Computing">Cloud Computing🌐☁️💻</option>
+                            <option value="Deep Learning">Deep Learning🧠🤖💡</option>
+                            
+                        </select> <br />
+
+
+                         <input required className="btn bg-transparent " type="submit" value="Submit" />
                     </form>
                 </div>
                 {/* footer */}

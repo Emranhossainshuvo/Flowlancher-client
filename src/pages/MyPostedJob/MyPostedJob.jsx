@@ -63,7 +63,7 @@ const MyPostedJob = () => {
                 <Navbar></Navbar>
                 <Helmet><title>FlowLancher | Update job</title></Helmet>
                 {/* user specific job will code here */}
-
+{/* console.log(bid) */}
                 <div className="relative pt-28 pb-28 overflow-x-auto">
                     <table className="w-full text-white font-semibold text-sm text-left ">
                         <thead className="text-xs  uppercase   text-white font-semibold">
