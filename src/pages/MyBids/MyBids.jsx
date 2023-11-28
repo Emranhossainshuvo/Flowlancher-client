@@ -12,7 +12,7 @@ const MyBids = () => {
     const { user } = useContext(AuthContext)
     const [bids, setBids] = useState([])
 
-    const url = `https://flow-lancher-server.vercel.app/bids?email=${user?.email}`
+    const url = `http://localhost:5000/bids?email=${user?.email}`
 
 
     useEffect(() => {
@@ -23,8 +23,9 @@ const MyBids = () => {
 
 
     return (
-        <>
-            <div className='max-w-7xl mx-auto text-white bg-[#272829]'>
+        <><div className=' bg-[#272829]'>
+
+            <div className='max-w-7xl mx-auto text-white'>
                 <Navbar></Navbar>
                 <Helmet><title>FlowLancher | My bids</title></Helmet>
                 {/* my bids data will appear here */}
@@ -66,6 +67,7 @@ const MyBids = () => {
                 </div>
 
             </div>
+        </div>
             <Footer></Footer>
         </>
     );

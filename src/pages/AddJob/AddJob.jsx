@@ -21,7 +21,7 @@ const AddJob = () => {
         // console.log(newJob)
 
         // send a post request to the server
-        fetch('https://flow-lancher-server.vercel.app/jobs', {
+        fetch('http://localhost:5000/jobs', {
             method: "POST", 
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const MybidsCard = ({bid}) => {
                 {deadline}
             </td>
             <td className="px-6 text-white font-semibold text-lg py-4">
-                {price}
+               ${price}
             </td>
         </tr>
     );

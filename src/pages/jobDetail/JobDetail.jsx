@@ -32,7 +32,7 @@ const JobDetail = () => {
 
         //  send data to the server and then database
 
-        fetch('https://flow-lancher-server.vercel.app/bids', {
+        fetch('http://localhost:5000/bids', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
