@@ -3,6 +3,7 @@ import { GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithP
 
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from "../Firebase/firebase.config";
+import { prototype } from "postcss/lib/previous-map";
 
 export const AuthContext = createContext(null)
 
