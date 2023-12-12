@@ -1,4 +1,4 @@
-
+import { useAnimation } from "react-animatable";
 
 const Banner = () => {
     // const bannerImg = 'url("https://i.ibb.co/xCCwTcP/studio-shot-positive-dark-skinned-girl-wears-round-transparent-glasses.jpg")'; 
@@ -10,6 +10,14 @@ const Banner = () => {
     //     textAlign: 'center', 
     //     padding: '50px'
     // }
+
+    const animate = useAnimation(
+        [{ transform: "rotate(0deg)" }, { transform: "rotate(720deg)" }],
+        {
+          duration: 1000,
+          easing: "ease-in-out",
+        }
+      );
 
     return (
         <>
@@ -25,7 +33,7 @@ const Banner = () => {
                 <button className="w-3 h-3 mx-2 bg-gray-300 rounded-full md:mx-0 focus:outline-none hover:bg-blue-500"></button>
             </div> */}
 
-            <div className="max-w-lg pb-3 rounded-md ps-3 md:mx-12 bg-[#61677A] md:order-2">
+            <div  className="max-w-lg pb-3 rounded-md ps-3 md:mx-12 bg-[#61677A] md:order-2">
                 <h1 className="text-3xl tracking-wide font-semibold text-[#FFF6E0]   pt-2 md:text-4xl font-custom">The best online job marketplace</h1>
             
                 <div className="mt-6">
@@ -34,8 +42,11 @@ const Banner = () => {
             </div>
         </div>
 
-        <div className="md:flex items-center justify-center w-full h-96 md:w-1/2">
-            <img className="object-cover w-full h-full max-w-2xl rounded-md" src="https://i.ibb.co/xCCwTcP/studio-shot-positive-dark-skinned-girl-wears-round-transparent-glasses.jpg" alt="A girl pointing on left side" />
+        <div  ref={animate} onClick={() => {
+        // 3. And play it!
+        animate.play();
+      }} className="md:flex items-center justify-center w-full h-96 md:w-1/2">
+            <img className="object-cover w-full h-full hover:opacity-60 cursor-pointer max-w-2xl rounded-md" src="https://i.ibb.co/xCCwTcP/studio-shot-positive-dark-skinned-girl-wears-round-transparent-glasses.jpg" alt="A girl pointing on left side" />
         </div>
     </div>
     </>
